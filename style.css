@@ -1,0 +1,188 @@
+:root {
+    --color-primary: #ffc596;  /* Cor para o lado esquerdo (ex.: tom quente) */
+    --color-secondary: #FFF9EB; /* Cor para o lado direito (Bege claro) */
+    --color-tertiary: #ffc596;  /* Usada para o botão adicionar (mesma que primary) */
+    --color-button: #ffc59c;    /* Cor do botão sortear (Laranja) */
+    --color-button-hover: #e55720; /* Laranja mais escuro para hover */
+    --color-text: #000000;      /* Texto branco */
+    --color-white: #000000;     /* Branco (para contrastes, se necessário) */
+    --darken-factor: 0.8;       /* Fator para o filter: brightness(0.8) deixa 80% do brilho (20% mais escuro) */
+}
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+}
+
+/* Dividindo a página inteira em 2 seções iguais */
+.main-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Lado esquerdo – Banner com título e imagem */
+.header-banner {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: filter 0.3s ease;
+}
+
+/* Lado direito – Seção de entradas e botões */
+.input-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: filter 0.3s ease;
+}
+
+/* Classe aplicada para escurecer o elemento */
+.darken {
+    filter: brightness(var(--darken-factor));
+}
+
+/* Título "Amigo Secreto" */
+.main-title {
+    font-family: "Merriweather", serif;
+    font-size: 36px; /* Mesma fonte do .section-title */
+    font-weight: 700;
+    color: var(--color-white);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Título "Digite o nome dos seus amigos" – usando a mesma fonte de "Amigo Secreto" */
+.section-title {
+    font-family: "Merriweather", serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Wrapper do input (centralizado) */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Campo de input */
+.input-name {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+/* Container do botão (sorteio) */
+.button-container {
+    width: 300px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilo padrão para botões */
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Botão "Adicionar" */
+.button-add {
+    background-color: var(--color-tertiary);
+    color: black;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.button-add:hover {
+    background-color: #a1a1a1;
+}
+
+/* Botão "Sortear" */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-button);
+    font-size: 16px;
+}
+
+.button-draw img {
+    margin-right: 40px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Botão "Recomeçar" */
+.button-reset {
+    margin-top: 10px;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    width: 100%;
+}
+
+.button-reset:hover {
+    background-color: #ff3b3b;
+}
+
+/* Estilos para listas (ex.: nomes e resultados) */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #05DF05;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
